@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "frontend/build/static/css/main.4eac0ea9.chunk.css",
+    "main.js": "frontend/build/static/js/main.1834fd84.chunk.js",
+    "main.js.map": "frontend/build/static/js/main.1834fd84.chunk.js.map",
+    "runtime~main.js": "frontend/build/static/js/runtime~main.2f06f9c6.js",
+    "runtime~main.js.map": "frontend/build/static/js/runtime~main.2f06f9c6.js.map",
+    "static/css/2.5a2f7233.chunk.css": "frontend/build/static/css/2.5a2f7233.chunk.css",
+    "static/js/2.ffec5d6a.chunk.js": "frontend/build/static/js/2.ffec5d6a.chunk.js",
+    "static/js/2.ffec5d6a.chunk.js.map": "frontend/build/static/js/2.ffec5d6a.chunk.js.map",
+    "index.html": "frontend/build/index.html",
+    "precache-manifest.03990fcb0cb1f35943ad115fce3e239d.js": "frontend/build/precache-manifest.03990fcb0cb1f35943ad115fce3e239d.js",
+    "service-worker.js": "frontend/build/service-worker.js",
+    "static/css/2.5a2f7233.chunk.css.map": "frontend/build/static/css/2.5a2f7233.chunk.css.map",
+    "static/css/main.4eac0ea9.chunk.css.map": "frontend/build/static/css/main.4eac0ea9.chunk.css.map"
+  }
+}
