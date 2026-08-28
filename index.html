@@ -1,7 +1,36 @@
-<h2>Stuff I built for fun</h2>
+<h2 id='h'>Stuff I built for fun</h2>
 <ul>
-  <li><a href='https://guptaa.run/prime-visualizer/'>Prime Visualizer</a> (<a href='https://github.com/akgupta89/prime-visualizer'>source</a>) converts seemingly random prime numbers into fun patterns.</li>
-  <li><a href='https://guptaa.run/lightscreen/'>Light Screen</a> (<a href='https://github.com/akgupta89/lightscreen'>source</a>) turns monitors into illumination sources using the broadcast channel API create a global state across multiple windows.</li>
-  <li><a href='https://www.npmjs.com/package/fast-prime-gen'>fast-prime-gen</a> (<a href='https://github.com/akgupta89/fast-prime-gen'>source</a>) is an npm package that generates sequential primes on demand through a generator.</li>
-  <li><a href='https://github.com/akgupta89/doomwall'>Doomwall</a> is a Chrome extension that blocks the sites you open on autopilot and shames you a little when you try.</li>
+  <li><a data-icon='🔢' href='https://guptaa.run/prime-visualizer/'>Prime Visualizer</a> (<a href='https://github.com/akgupta89/prime-visualizer'>source</a>) converts seemingly random prime numbers into fun patterns.</li>
+  <li><a data-icon='💡' href='https://guptaa.run/lightscreen/'>Light Screen</a> (<a href='https://github.com/akgupta89/lightscreen'>source</a>) turns monitors into illumination sources using the broadcast channel API create a global state across multiple windows.</li>
+  <li><a data-icon='📦' href='https://www.npmjs.com/package/fast-prime-gen'>fast-prime-gen</a> (<a href='https://github.com/akgupta89/fast-prime-gen'>source</a>) is an npm package that generates sequential primes on demand through a generator.</li>
+  <li><a data-icon='🧱' href='https://github.com/akgupta89/doomwall'>Doomwall</a> is a Chrome extension that blocks the sites you open on autopilot and shames you a little when you try.</li>
 </ul>
+<link id='fav' rel='icon' href=''>
+<script>
+// 1. tab drift: leave and the title nags you (doomwall, but polite)
+const NAG = ["come back", "the page is still here", "nothing changed", "scrolling isn't resting"];
+const title = document.title || "Stuff I built for fun"; document.title = title;
+addEventListener("visibilitychange", () => document.title = document.hidden ? NAG[Math.floor(Math.random() * NAG.length)] : title);
+
+// 2. hover a project: favicon becomes its emoji
+const fav = document.getElementById("fav"), emoji = e => `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>${e}</text></svg>`;
+for (const a of document.querySelectorAll("a[data-icon]")) { a.onmouseenter = () => fav.href = emoji(a.dataset.icon); a.onmouseleave = () => fav.href = ""; }
+
+// 3. click the heading 5 times
+let clicks = 0; document.getElementById("h").onclick = e => { if (++clicks === 5) e.target.textContent = "Stuff I built instead of sleeping"; };
+
+// 4. konami → prime rain
+const KONAMI = "ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,ArrowLeft,ArrowRight,b,a"; let keys = [];
+function* primes() { const seen = {}; for (let n = 2; ; n++) { if (!seen[n]) { yield n; seen[n * n] = [n]; } else { for (const p of seen[n]) (seen[n + p] = seen[n + p] || []).push(p); delete seen[n]; } } }
+addEventListener("keydown", e => {
+  keys = [...keys, e.key].slice(-10); if (keys.join() !== KONAMI) return; keys = [];
+  const gen = primes(), t = setInterval(() => {
+    const d = document.body.appendChild(document.createElement("div")); d.textContent = gen.next().value;
+    d.style.cssText = `position:fixed;top:-2em;left:${Math.random() * 95}vw;font:bold ${12 + Math.random() * 24}px monospace;color:hsl(${Math.random() * 360},80%,50%);pointer-events:none;transition:transform 4s linear;z-index:9`;
+    requestAnimationFrame(() => d.style.transform = "translateY(110vh)"); setTimeout(() => d.remove(), 4200);
+  }, 60); setTimeout(() => clearInterval(t), 15000);
+});
+
+// 5. for the ones who open the console
+console.log("%c 2 3 5 7 11 13 17 19 23 29\n you found the real site.\n try ↑↑↓↓←→←→BA", "color:#ff5a1f;font-family:monospace");
+</script>
