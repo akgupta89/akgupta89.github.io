@@ -1,0 +1,54 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Doomwall · Privacy policy</title>
+<link rel="icon" href="../icon.png">
+<style>
+  :root{--bg:#0f0e0c;--bg2:#181613;--ink:#f3ead9;--mute:#8c8473;--line:#2a2622;--ember:#ff5a1f;--ember2:#ff8a4c}
+  html{background:var(--bg)}
+  body{margin:0;color:var(--ink);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,sans-serif;
+    background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(255,90,31,.14),transparent 60%) no-repeat var(--bg)}
+  main{max-width:680px;margin:0 auto;padding:48px 24px 80px}
+  .crumb{color:var(--mute);font-size:13px}
+  h1{font:500 40px/1.1 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;letter-spacing:-.02em;margin:8px 0 4px}
+  .date{color:var(--mute);font-size:13px;margin:0 0 32px}
+  h2{font:500 22px/1.2 "Iowan Old Style",Palatino,Georgia,serif;margin:32px 0 8px}
+  p,li{color:var(--mute)} b{color:var(--ink)}
+  ul{padding-left:20px}
+  a{color:var(--ember2)}
+  code{font:13px ui-monospace,"SF Mono",Menlo,monospace;background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:var(--ink)}
+</style>
+<main>
+  <div class="crumb"><a href="../">Doomwall</a> / privacy</div>
+  <h1>Privacy policy</h1>
+  <p class="date">Effective 28 August 2026</p>
+
+  <p><b>Short version: Doomwall collects nothing.</b> There are no accounts, no servers, no analytics, and no network requests. Everything it knows lives in your browser and leaves only if you export it yourself.</p>
+
+  <h2>What the extension stores</h2>
+  <p>All data is kept in Chrome's local extension storage (<code>chrome.storage.local</code>) on your device:</p>
+  <ul>
+    <li>Your rules: the domains, paths, exceptions and time windows you add.</li>
+    <li>Settings: blocking on/off, pause length, daily bypass limit, and the current pause timer.</li>
+    <li>Usage counts: how many times a blocked site was attempted, how many times you bypassed, and minutes spent on a site after bypassing, per site and per day.</li>
+  </ul>
+  <p>This data is never transmitted anywhere. It is deleted when you remove the extension.</p>
+
+  <h2>Browsing history</h2>
+  <p>The Activity page can suggest sites to block by reading your Chrome history for the most-visited hosts of the last 30 days. This happens only while that page is open, is computed in memory, and is not stored or sent anywhere.</p>
+
+  <h2>What the extension does on websites</h2>
+  <p>Doomwall does not inject scripts into, read, or modify any web page. Its only action on a site is redirecting your own navigation to a domain you have listed to the extension's blocked page.</p>
+
+  <h2>AI agents (WebMCP)</h2>
+  <p>Doomwall exposes its own controls as WebMCP tools on its own pages, so a browser agent you use can manage your rules. This is a local interface; Doomwall itself does not talk to any AI service.</p>
+
+  <h2>Third parties</h2>
+  <p>None. No data is shared or sold, because none is collected.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the new version will be posted at this address with an updated date.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:me@guptaa.run">me@guptaa.run</a> · <a href="https://github.com/akgupta89/doomwall">github.com/akgupta89/doomwall</a></p>
+</main>
