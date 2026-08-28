@@ -1,0 +1,35 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Doomwall · Connect your agent</title>
+<link rel="icon" href="../icon.png">
+<style>
+  :root{--bg:#0f0e0c;--bg2:#181613;--ink:#f3ead9;--mute:#8c8473;--line:#2a2622;--ember:#ff5a1f;--ember2:#ff8a4c}
+  html{background:var(--bg)}
+  body{margin:0;color:var(--ink);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,sans-serif;
+    background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(255,90,31,.14),transparent 60%) no-repeat var(--bg)}
+  main{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+  .crumb{color:var(--mute);font-size:13px}
+  h1{font:500 40px/1.1 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;letter-spacing:-.02em;margin:8px 0 24px}
+  h2{font:500 22px/1.2 "Iowan Old Style",Palatino,Georgia,serif;margin:40px 0 12px}
+  a{color:var(--ember2)}
+  code{font:13px ui-monospace,"SF Mono",Menlo,monospace;background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+  pre{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px;overflow-x:auto;font-size:13px;line-height:1.5}
+  pre code{background:none;border:none;padding:0}
+  table{border-collapse:collapse;width:100%;font-size:14px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mute);font-weight:500}
+  .raw{margin-top:40px;color:var(--mute);font-size:13px}
+</style>
+<main>
+  <div class="crumb"><a href="../">Doomwall</a> / instructions</div>
+  <div id="doc"><p class="crumb">Loading…</p></div>
+  <p class="raw">Source of truth: <a id="rawlink" href="https://raw.githubusercontent.com/akgupta89/doomwall/main/WEBMCP.md">WEBMCP.md</a> in the repo — point your agent straight at it.</p>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.7/marked.min.js"></script>
+<script>
+  // rendered live from the repo so this page can't drift from the extension
+  fetch("https://raw.githubusercontent.com/akgupta89/doomwall/main/WEBMCP.md")
+    .then(r => r.text()).then(md => document.getElementById("doc").innerHTML = marked.parse(md))
+    .catch(() => document.getElementById("doc").innerHTML = '<p>Could not load. Read it on <a href="https://github.com/akgupta89/doomwall/blob/main/WEBMCP.md">GitHub</a>.</p>');
+</script>

@@ -1,0 +1,63 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Doomwall</title>
+<meta name="description" content="A Chrome extension that blocks the sites you open on autopilot and shames you a little when you try.">
+<link rel="icon" href="icon.png">
+<style>
+  :root{--bg:#0f0e0c;--bg2:#181613;--ink:#f3ead9;--mute:#8c8473;--line:#2a2622;--ember:#ff5a1f;--ember2:#ff8a4c}
+  *{box-sizing:border-box}
+  html{background:var(--bg)}
+  body{margin:0;min-height:100vh;color:var(--ink);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,sans-serif;
+    background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(255,90,31,.14),transparent 60%) no-repeat var(--bg)}
+  main{max-width:640px;margin:0 auto;padding:64px 24px 80px}
+  h1{font:500 56px/1 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;letter-spacing:-.02em;margin:24px 0 8px}
+  .tag{color:var(--mute);font-size:18px;margin:0 0 32px}
+  h2{font:11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:40px 0 12px}
+  ul{padding-left:0;list-style:none;margin:0}
+  li{padding:10px 0;border-top:1px solid var(--line)}
+  li:last-child{border-bottom:1px solid var(--line)}
+  b{color:var(--ink)} li{color:var(--mute)}
+  ol{padding-left:22px;color:var(--mute)} ol li{border:none;padding:4px 0}
+  code{font:13px ui-monospace,"SF Mono",Menlo,monospace;background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:var(--ink)}
+  a{color:var(--ember2)}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .btn{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:10px 20px;color:var(--ink);text-decoration:none}
+  .btn:hover{border-color:var(--ember);color:var(--ember2)}
+  .btn.primary{background:var(--ember);border-color:var(--ember);color:#100c08}
+  .btn.primary:hover{background:var(--ember2);border-color:var(--ember2)}
+  .wall{font:13px/1.5 ui-monospace,Menlo,monospace;color:var(--mute);background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-top:40px}
+  .wall b{color:var(--ember2)}
+</style>
+<main>
+  <img src="icon.png" width="72" height="72" alt="">
+  <h1>Doomwall</h1>
+  <p class="tag">A Chrome extension that blocks the sites you open on autopilot and shames you a little when you try.</p>
+  <div class="btns">
+    <a class="btn primary" href="https://github.com/akgupta89/doomwall">Get it on GitHub</a>
+    <a class="btn" href="instructions/">Connect your agent →</a>
+  </div>
+
+  <h2>What it does</h2>
+  <ul>
+    <li><b>Rules.</b> Block a domain, just a path on it (<code>youtube.com/shorts</code>), or carve out an exception (<code>reddit.com/r/programming</code>). Optionally only during a time window.</li>
+    <li><b>Blocked page.</b> A guilt line, how many times you tried today and overall, and roughly how much time you got back.</li>
+    <li><b>Bypass.</b> One tab gets through when you admit you have no self-control. Capped per day if you want.</li>
+    <li><b>Pause.</b> Turn everything off for a few minutes when you actually need a site.</li>
+    <li><b>Activity.</b> Daily and all-time numbers, a 14-day chart, time spent per site.</li>
+    <li><b>Agent-ready.</b> Every control is a <a href="instructions/">WebMCP tool</a>, so your AI agent can manage the wall for you.</li>
+    <li><b>Private.</b> Everything stays in your browser. No accounts, no servers.</li>
+  </ul>
+
+  <h2>Install</h2>
+  <ol>
+    <li>Clone <a href="https://github.com/akgupta89/doomwall">akgupta89/doomwall</a>.</li>
+    <li><code>chrome://extensions</code> → enable <b>Developer mode</b> → <b>Load unpacked</b> → pick the folder.</li>
+    <li>Click the toolbar icon → <b>Rules</b> → <b>Add rule</b>.</li>
+  </ol>
+
+  <div class="wall">
+    <b>reddit.com</b>: 14 times today, 212 all time. That's roughly <b>3.5 hours</b> you got back.<br>
+    <span>Was there a reason, or just a reflex?</span>
+  </div>
+</main>
