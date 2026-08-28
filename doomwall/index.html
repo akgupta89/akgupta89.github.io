@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Doomwall</title>
-<meta name="description" content="A Chrome extension that blocks the sites you open on autopilot and shames you a little when you try.">
+<meta name="description" content="A Chrome extension that blocks the sites you keep opening and shames you a little when you try.">
 <link rel="icon" href="icon.png">
 <style>
   :root{--bg:#0f0e0c;--bg2:#181613;--ink:#f3ead9;--mute:#8c8473;--line:#2a2622;--ember:#ff5a1f;--ember2:#ff8a4c}
@@ -11,7 +11,8 @@
   body{margin:0;min-height:100vh;color:var(--ink);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,sans-serif;
     background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(255,90,31,.14),transparent 60%) no-repeat var(--bg)}
   main{max-width:640px;margin:0 auto;padding:64px 24px 80px}
-  h1{font:500 56px/1 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;letter-spacing:-.02em;margin:24px 0 8px}
+  .brand{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+  h1{font:500 56px/1 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;letter-spacing:-.02em;margin:0}
   .tag{color:var(--mute);font-size:18px;margin:0 0 32px}
   h2{font:11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:40px 0 12px}
   ul{padding-left:0;list-style:none;margin:0}
@@ -30,9 +31,8 @@
   .wall b{color:var(--ember2)}
 </style>
 <main>
-  <img src="icon.png" width="72" height="72" alt="">
-  <h1>Doomwall</h1>
-  <p class="tag">A Chrome extension that blocks the sites you open on autopilot and shames you a little when you try.</p>
+  <div class="brand"><img src="icon.png" width="56" height="56" alt=""><h1>Doomwall</h1></div>
+  <p class="tag">A Chrome extension that blocks the sites you keep opening — out of habit, boredom, or whatever it is today — and shames you a little when you try.</p>
   <div class="btns">
     <a class="btn primary" href="https://github.com/akgupta89/doomwall">Get it on GitHub</a>
     <a class="btn" href="instructions/">Connect your agent →</a>
@@ -57,7 +57,6 @@
   </ol>
 
   <div class="wall">
-    <b>reddit.com</b>: 14 times today, 212 all time. That's roughly <b>3.5 hours</b> you got back.<br>
-    <span>Was there a reason, or just a reflex?</span>
+    <b>reddit.com</b>: 14 times today, 212 all time. That's roughly <b>3.5 hours</b> you got back. Was there a reason, or just a reflex?
   </div>
 </main>
